@@ -1,0 +1,23 @@
+{% extends "main.html" %} {% block title%} home page {% endblock %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+      <div class="homepageLogedin">
+        <div> <img src="../../static/images/reading.png" alt="girl reading"></div>
+        <div style="display: grid; align-content: center;">
+          <h1>hi {{user.username}}!</h1>
+          <p>welcome to the dashboard!</p>
+        </div>
+      </div>
+      {% else %}
+      <div class="homepagenotLogedin" style="display: flex;">
+        <div><img src="../../static/images/girl-and-boy.png" alt="login" style="
+          height: 459px; margin-left: 100px;
+      "></div>
+        <div style="display: grid; align-content: center;">
+          <p>Have an account? Login <a href="/login">here</a></p>
+          <p>Don't have an account? Create one <a href="/register">here</a></p>
+        </div>
+      </div>
+      {% endif %}
+{% endblock %}
