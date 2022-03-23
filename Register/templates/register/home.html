@@ -3,7 +3,11 @@
 {% block content %} 
     {% if user.is_authenticated %}
     <div class="homepageLogedin" style="display: flex; justify-content: center;">
-      <div><img src="{% static '/images/reading.png' %}" alt="girl reading" /></div>
+      <div><img 
+        src="{% static '/images/reading.png' %}" 
+        alt="girl reading" 
+        style="max-width: 584px;"
+        /></div>    
       <div style="display: grid; align-content: center">
         <h1>hi {{user.username}}!</h1>
         <p>welcome to the dashboard!</p>
